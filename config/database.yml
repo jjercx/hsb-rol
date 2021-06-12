@@ -3,17 +3,18 @@ default: &default
   encoding: unicode
   pool: 5
   timeout: 5000
-
-development:
-  <<: *default
-  database: <%= ENV['DB_NAME'] %>
   host: <%= ENV['DB_HOST'] %>
   username: <%= ENV['DB_USERNAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
 
+development:
+  <<: *default
+  database: <%= ENV['DB_NAME'] %>_development
+
 test:
   <<: *default
-  database: <%= ENV['TEST_DB_NAME'] %>
-  host: <%= ENV['TEST_DB_HOST'] %>
-  username: <%= ENV['TEST_DB_USERNAME'] %>
-  password: <%= ENV['TEST_DB_PASSWORD'] %>
+  database: <%= ENV['DB_NAME'] %>_test
+
+production:
+  <<: *default
+  database: <%= ENV['DB_NAME'] %>_production
