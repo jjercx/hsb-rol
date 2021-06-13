@@ -58,3 +58,5 @@ gem 'rails_admin', '~> 2.1.1'
 gem 'unicorn', '~> 6.0.0'
 # Use postgres as the database for Active Record
 gem 'pg', '~> 1.2.3'
+# A fast JSON:API serializer for Ruby
+gem 'jsonapi-serializer', '~> 2.2.0'
