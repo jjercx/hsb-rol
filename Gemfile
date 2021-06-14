@@ -54,6 +54,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  # A more helpful way to view differences between complex data structures in RSpec
+  gem "super_diff"
 end
 
 # Flexible authentication solution for Rails with Warden
