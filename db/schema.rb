@@ -16,7 +16,10 @@ ActiveRecord::Schema.define(version: 2021_06_13_150140) do
   enable_extension "plpgsql"
 
   create_table "doctors", force: :cascade do |t|
-    t.string "name"
+    t.string "full_name", null: false
+    t.date "birth_date"
+    t.date "start_date"
+    t.boolean "extra_duties", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

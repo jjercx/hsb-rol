@@ -29,7 +29,7 @@ module Api::V1
     private
 
     def doctor_params
-      params.require(:doctor).permit(:name)
+      params.require(:doctor).permit(:full_name, :birth_date, :start_date, :extra_duties)
     end
 
     def set_doctor
