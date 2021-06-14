@@ -5,6 +5,16 @@ Rails.application.configure do
   config.hosts << "hsb"
   config.debug_exception_response_format = :api
 
+  # We want to set up a custom logger which logs to STDOUT.
+  # Docker expects your application to log to STDOUT/STDERR and to be ran
+  # in the foreground.
+  logger = ActiveSupport::Logger.new(STDOUT)
+  logger.formatter = config.log_formatter
+
+  config.log_level = :debug
+  config.log_tags  = [:subdomain, :uuid]
+  config.logger    = ActiveSupport::TaggedLogging.new(logger)
+
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.

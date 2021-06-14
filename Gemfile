@@ -29,6 +29,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # A Ruby gem to load environment variables from `.env`
   gem 'dotenv-rails'
+  # RSpec for Rails 5+. Adding it to the development group for generators
+  gem 'rspec-rails', '~> 5.0.0'
+  # A library for setting up Ruby objects as test data.
+  gem "factory_bot_rails"
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker'
 end
 
 group :development do
@@ -60,3 +66,10 @@ gem 'unicorn', '~> 6.0.0'
 gem 'pg', '~> 1.2.3'
 # A fast JSON:API serializer for Ruby
 gem 'jsonapi-serializer', '~> 2.2.0'
+# Rails >= 3 pry initializer
+gem 'pry-rails'
+# REXML is an XML toolkit for Ruby. rexml gem is a bundled gem since Ruby 3.0.0 and tests fail without it.
+# https://stackoverflow.com/questions/65479863/rails-6-1-ruby-3-0-0-tests-error-as-they-cannot-load-rexml
+gem 'rexml'
+# Pretty print your Ruby objects with style -- in full color and with proper indentation
+gem 'awesome_print'
